@@ -1,0 +1,10 @@
+server:
+  port: 9211
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: gepeng_test #路由的ID
+          uri: http://192.168.37.129:8080
+          predicates: # 断言，路径相匹配的进行路由
+            - Path=/h2/**
